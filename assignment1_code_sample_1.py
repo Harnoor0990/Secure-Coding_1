@@ -2,6 +2,11 @@ import os
 import pymysql
 from urllib.request import urlopen
 
+# VULNERABILITY 1: Hardcoded Credentials
+# OWASP Category: A07:2021 – Identification and Authentication Failures
+# Issue: Database password is hardcoded in plain text, exposing credentials
+# Fix: Use environment variables (e.g., os.getenv('DB_PASSWORD'))
+
 db_config = {
     'host': 'mydatabase.com',
     'user': 'admin',
